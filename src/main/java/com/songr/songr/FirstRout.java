@@ -1,15 +1,18 @@
 package com.songr.songr;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 
 @Controller
 public class FirstRout {
+    @Autowired
+    AlbumReposity albumReposity;
+
     @GetMapping("/")
     @ResponseBody
     public String homePage(){
@@ -40,5 +43,24 @@ public class FirstRout {
         m.addAttribute("albums",albums);
         return "albums.html";
 
+    }
+    @GetMapping("/getSong")
+    public String getAllAlbum(Model  m){
+
+        m.addAttribute("albums",albumReposity.findAll());
+        return "albums.html";
+
+    }
+
+    @GetMapping("/songs")
+    public String getAllAlbum(){
+        return "albumsForm.html";
+
+    }
+    @PostMapping("/AddSong")
+    public RedirectView addSong(@RequestParam(value = "title") String title , @RequestParam(value = "artist") String artist ,@RequestParam(value = "length") double length,@RequestParam(value = "songCount") int songCount,@RequestParam(value = "imageUrl") String imageUrl){
+        Album album=new Album(title,artist,imageUrl,length,songCount);
+        albumReposity.save(album);
+        return new RedirectView("/getSong");
     }
 }
