@@ -1,7 +1,7 @@
 #### Song :
-* first thng i did was a route ("/hello"),method showHello that will rerturn templates (heloo.html).
+* The first thing I did was update the album constructer to add an ID, then I created an interface class (AlbumReposity) to connect to the database.
 
-* secound  thing i did was a route ("/capitalize/{world}"), with capitalize method  that accept string (world) when the user fill the route with sentence ,then rerturn templates (uperCace.html) with capitalize letter .
+* The second thing I did is a route("/ songs"), with the getAllAlbum method that will show me (albumsForm.html) with a form to add sogn after filling in the form and submitting the song it will be saved in the database.
 
-* first thing i did was a new class (Album) with constructer ,seter & geter and to string method the constructer accept (String title, String artist, String imageUrl, double length, int songCount) ,
-* then in the FirstRout class i did route  ("/albums") with albums method in the albums method i created a new arrayList and fill it with three albums ,then the method will return (albums.html) page with 3 displayed albums .
+* The third thing I did was a new route(/ getSong) using the getAllAlbum method that accepts (form),
+And return (albumsForm.html) which will display the albums in the database.
