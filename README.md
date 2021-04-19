@@ -1,7 +1,8 @@
 #### Song :
-* The first thing I did was update the album constructer to add an ID, then I created an interface class (AlbumReposity) to connect to the database.
+* first thng i did was a update Album constructer to add id ,then i created interface class (AlbumReposity)  to connect to data base.
 
-* The second thing I did is a route("/ songs"), with the getAllAlbum method that will show me (albumsForm.html) with a form to add sogn after filling in the form and submitting the song it will be saved in the database.
+* secound  thing i did was a route ("/songs"), with getAllAlbum method  that will show to me  (albumsForm.html) with form to add sogn after filling the form and submit the song will be saved into database  .
 
-* The third thing I did was a new route(/ getSong) using the getAllAlbum method that accepts (form),
-And return (albumsForm.html) which will display the albums in the database.
+* third thing i did was a new rout  (/getSong) with getAllAlbum method  that accept (Model),
+and return (albumsForm.html) that will display the albums in database .
+
