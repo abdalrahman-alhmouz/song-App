@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class SongControler {
@@ -18,10 +19,9 @@ public class SongControler {
     AlbumReposity albumReposity ;
 
     @GetMapping("/Song")
-    @ResponseBody
     public String getSongs(Model m){
         m.addAttribute("songs",songRepository.findAll());
-        return "test";
+        return "ShowSong.html";
     }
 
     @GetMapping("/Songs/{id}")
@@ -33,11 +33,15 @@ public class SongControler {
 
 
     @PostMapping("/SongAdd")
-    public ResponseEntity<Song> addSong( String title, int length, int trackNumber,Integer id){
+    public RedirectView addSong(String title, int length, int trackNumber, Integer id){
         Album album=albumReposity.findById(id).get();
         Song song=new Song( title,  length, trackNumber,album);
         songRepository.save(song);
-        return new ResponseEntity(song,HttpStatus.OK);
+        return new RedirectView("/Song");
+    }
+        @GetMapping("/Songs.html")
+    public String getPage(){
+        return "Songs.html";
     }
 
 }

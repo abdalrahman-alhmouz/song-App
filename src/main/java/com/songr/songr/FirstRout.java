@@ -17,10 +17,9 @@ public class FirstRout {
     AlbumReposity albumReposity;
 
     @GetMapping("/album")
-    @ResponseBody
     public String getAlbums(Model m){
         m.addAttribute("album",albumReposity.findAll());
-        return "test";
+        return "albums.html";
     }
 
     @GetMapping("/Albums/{id}")
@@ -32,11 +31,19 @@ public class FirstRout {
 
 
     @PostMapping("/AddAlbum")
-    public ResponseEntity<Album> addSong(String title, String artist, String imageUrl, double length, int songCount){
+    public RedirectView addAlpum(String title, String artist, String imageUrl, double length, int songCount){
         Album album=new Album(title,artist,imageUrl,length,songCount);
         albumReposity.save(album);
-        return new ResponseEntity<>(album,HttpStatus.OK);
-    }
+        return new RedirectView("/album");}
+//
+
+
+//    @PostMapping("/AddAlbum")
+//    public ResponseEntity<Album> addSong(String title, String artist, String imageUrl, double length, int songCount){
+//        Album album=new Album(title,artist,imageUrl,length,songCount);
+//        albumReposity.save(album);
+//        return new ResponseEntity<>(album,HttpStatus.OK);
+//    }
 
 
 //    @GetMapping("/")
@@ -78,11 +85,12 @@ public class FirstRout {
 //
 //    }
 //
-//    @GetMapping("/songs")
-//    public String getAllAlbum(){
-//        return "albumsForm.html";
-//
-//    }
+    @GetMapping("/AlbumsForm")
+    public String getAllAlbum(){
+        return "albumsForm.html";
+
+    }
+
 //
 
 
