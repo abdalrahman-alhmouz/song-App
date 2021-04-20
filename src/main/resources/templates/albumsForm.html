@@ -5,36 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styleForm.css">
+    <link rel="stylesheet" href="style.css">
+
     <title>Document</title>
 </head>
 <body>
-    <div class="Form">
-<h4>Add new Song</h4>
-<form action="/AddSong" method="post">
+<h4>Add new Album</h4>
+<form action="/AddAlbum" method="post">
     <label>
-        song title :
+        Album title :
         <input type="text" name="title" >
     </label>
     <label>
-        song artist :
+        Album artist :
         <input type="text" name="artist" >
     </label>
     <label>
-        song length :
+        Album length :
         <input type="text" name="length" >
     </label>
     <label>
-        song count :
+        Album count :
         <input type="text" name="songCount" >
     </label>
     <label>
-        song image :
+        Album image :
         <input type="text" name="imageUrl" >
     </label>
 <button type="submit">Add Song</button>
-
 </form>
-</div>
+<a href="/album">Show Sogn </a>
+<br>
+<br>
+<a href="/Songs.html">Add Song</a>
+
 </body>
 </html>

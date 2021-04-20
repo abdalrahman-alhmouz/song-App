@@ -10,19 +10,19 @@
 </head>
 <body>
 <ul>
-    <div th:each="album :${album}">
-      <h3> song title: <span th:text="${album.title}"></span></h3>
-        <h3> song artist:<span th:text="${album.artist}"></span></h3>
-        <h3> song length: <span th:text="${album.length}"></span></h3>
-        <h3> song count: <span th:text="${album.songCount}"></span></h3>
-        <img th:src="${album.imageUrl}">
+    <div th:each="songs :${songs}">
+        <h3> song title: <span th:text="${songs.title}"></span></h3>
+        <h3> song trackNumber:<span th:text="${songs.trackNumber}"></span></h3>
+        <h3> song length: <span th:text="${songs.length}"></span></h3>
+        <h3> song id: <span th:text="${songs.id}"></span></h3>
+        <br>
+        <br>
+
     </div>
 </ul>
 <a href="/Songs.html">Add Song</a>
 <br>
 <br>
 <a href="/album">Show Sogn </a>
-
-
 </body>
 </html>
