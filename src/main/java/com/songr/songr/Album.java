@@ -1,33 +1,9 @@
 package com.songr.songr;
-import javax.persistence.*;
-import java.util.List;
 
-@Entity
 public class Album {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id ;
-    String title,artist,imageUrl;
-    int songCount;
-    double length;
-    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
-    private List<Song> songs;
-    public Album(){
-
-    }
-
-    public Album(String title, String artist, String imageUrl, double length, int songCount ) {
-        this.title = title;
-        this.artist = artist;
-        this.length = length;
-        this.imageUrl=imageUrl;
-        this.songCount=songCount;
-    }
-
-
-    public Integer getId() {
-        return id;
-    }
+   private String title,artist,imageUrl;
+    private int songCount;
+    private double length;
 
     public String getTitle() {
         return title;
@@ -69,13 +45,12 @@ public class Album {
         this.length = length;
     }
 
-
-    public List<Song> getSongs() {
-        return songs;
-    }
-
-    public void setSongs(List<Song> songs) {
-        this.songs = songs;
+    public Album(String title, String artist, String imageUrl, double length, int songCount) {
+        this.title = title;
+        this.artist = artist;
+        this.length = length;
+        this.imageUrl=imageUrl;
+        this.songCount=songCount;
     }
 
     @Override

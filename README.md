@@ -21,3 +21,7 @@ And return (ShowSong.html) which will display the albums in the database.
 * The forth  thing I did was a new route(/Songs/{id}) using the songGeter method that accepts (id),
 And return (the Song by id ) which will display the Song by id in  the database.
 
+
+* run the sever , in the locallhost write a route ("/albums") to see the albums
+*  run the sever , in the locallhost write a route ("//capitalize/{world}") with word that you want to convert it to cabital letter ;
+=======
