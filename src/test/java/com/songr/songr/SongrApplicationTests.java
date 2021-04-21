@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 @SpringBootTest
 class SongrApplicationTests {
-	Album album=new Album("Hello","Adele","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3_tgt-9eSrg_VBIqN1mmLl5lJ2f_a5fmi91t4gMvN3YV1QJ2FJou2QJ1-Q5-xHq1blgw&usqp=CAU",6.6,0);
+    Album album=new Album("Hello","Adele","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3_tgt-9eSrg_VBIqN1mmLl5lJ2f_a5fmi91t4gMvN3YV1QJ2FJou2QJ1-Q5-xHq1blgw&usqp=CAU",6.6,0);
+    Song song=new Song("Hello",6,5,album);
 
 		@Test
 		void constructerTest () {
@@ -72,4 +73,11 @@ class SongrApplicationTests {
 			album.setSongCount(8);
 			assertThat(album.getSongCount()).isEqualTo(8);
 		}
-	}
+
+//		____________________________________________________]]]
+@Test
+void songTest () {
+    assertThat(song instanceof Song).isEqualTo(true);
+}
+
+}

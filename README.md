@@ -1,10 +1,27 @@
+#### Album :
+* The first thing I did was update the album constructer to add an ID, then I created an interface class (AlbumReposity) to connect to the database.
+
+* The second thing I did is a route("/ addAlpum"), with the addAlpum method that will show me (albumsForm.html) with a form to add Album after filling in the form and submitting the Album it will be saved in the database.
+
+* The third thing I did was a new route(/ Album) using the getAllAlbums method that accepts (form),
+And return (albumsForm.html) which will display the albums in the database.
+
+* The forth  thing I did was a new route(/ Albums/{id}) using the getAlbum method that accepts (id),
+And return (the album by id ) which will display the albums by id in  the database.
+
 #### Song :
-* first thng i did was a route ("/hello"),method showHello that will rerturn templates (heloo.html).
 
-* secound  thing i did was a route ("/capitalize/{world}"), with capitalize method  that accept string (world) when the user fill the route with sentence ,then rerturn templates (uperCace.html) with capitalize letter .
+* The first thing I did was update the album constructer to add an ID, then I created an interface class (SongReposity) to connect to the database.
 
-* first thing i did was a new class (Album) with constructer ,seter & geter and to string method the constructer accept (String title, String artist, String imageUrl, double length, int songCount) ,
-* then in the FirstRout class i did route  ("/albums") with albums method in the albums method i created a new arrayList and fill it with three albums ,then the method will return (albums.html) page with 3 displayed albums .
+* The second thing I did is a route("/ songs"), with the getSongs method that will show me (Songs.html) with a form to add sogn after filling in the form and submitting the song it will be saved in the database.
+
+* The third thing I did was a new route(/ SongAdd) using the addSong method that accepts (form),
+And return (ShowSong.html) which will display the albums in the database.
+
+* The forth  thing I did was a new route(/Songs/{id}) using the songGeter method that accepts (id),
+And return (the Song by id ) which will display the Song by id in  the database.
+
 
 * run the sever , in the locallhost write a route ("/albums") to see the albums
 *  run the sever , in the locallhost write a route ("//capitalize/{world}") with word that you want to convert it to cabital letter ;
+=======
