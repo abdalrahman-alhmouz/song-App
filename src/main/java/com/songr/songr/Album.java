@@ -1,9 +1,9 @@
 package com.songr.songr;
 
 public class Album {
-    String title,artist,imageUrl;
-    int songCount;
-    double length;
+   private String title,artist,imageUrl;
+    private int songCount;
+    private double length;
 
     public String getTitle() {
         return title;
