@@ -19,6 +19,7 @@ toString().
 * third thing i did was a new rout  (/getSong) with getAllAlbum method  that accept (Model),
 and return (albumsForm.html) that will display the albums in database .
 
+<<<<<<< HEAD
 *  Navigate to localhost:port8080 to basic splash page.
 Home: http://localhost:8080/.
 Captialize: http://localhost:8080/capitalize/{word}.
@@ -28,3 +29,5 @@ Albums list: http://localhost:8080/albums
  * FirstRoute :a class that contain my web application routes
  
 Running the application:
+=======
+>>>>>>> c6365e57ec2e39b016237312816db830064cf234
