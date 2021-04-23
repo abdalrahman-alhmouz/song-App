@@ -11,13 +11,22 @@
 <body>
 <ul>
     <div th:each="albums :${albums}">
-      <h3> song title: <span th:text="${albums.title}"></span></h3>
+        <h3> song title: <span th:text="${albums.title}"></span></h3>
         <h3> song artist:<span th:text="${albums.artist}"></span></h3>
         <h3> song length: <span th:text="${albums.length}"></span></h3>
         <h3> song count: <span th:text="${albums.songCount}"></span></h3>
         <img th:src="${albums.imageUrl}">
     </div>
 </ul>
-
+<ul>
+    <div th:each="albumss :${albumss}">
+        <h3> song title: <span th:text="${albumss.title}"></span></h3>
+        <h3> song artist:<span th:text="${albumss.artist}"></span></h3>
+        <h3> song length: <span th:text="${albumss.length}"></span></h3>
+        <h3> song count: <span th:text="${albumss.songCount}"></span></h3>
+        <img th:src="${albumss.imageUrl}">
+    </div>
+</ul>
+<a href="/">Home</a>
 </body>
 </html>

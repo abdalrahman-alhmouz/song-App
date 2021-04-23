@@ -13,13 +13,9 @@ public class FirstRout {
     @Autowired
     AlbumReposity albumReposity;
 
-    @GetMapping("/")
-    @ResponseBody
-    public String homePage(){
-        return "helloTest";
-    }
 
-    @GetMapping("/hello")
+
+    @GetMapping("/")
     public String showHello(){
         return "hello.html";
     }
@@ -41,18 +37,20 @@ public class FirstRout {
         albums.add(albumOne);
         albums.add(albumTow);
         m.addAttribute("albums",albums);
+        m.addAttribute("albumss",albumReposity.findAll());
+
         return "albums.html";
 
     }
-    @GetMapping("/getSong")
-    public String getAllAlbum(Model  m){
+//    @GetMapping("/getSong")
+//    public String getAllAlbum(Model  m){
+//
+//        m.addAttribute("albums",albumReposity.findAll());
+//        return "albums.html";
+//
+//    }
 
-        m.addAttribute("albums",albumReposity.findAll());
-        return "albums.html";
-
-    }
-
-    @GetMapping("/songs")
+    @GetMapping("/AddSong")
     public String getAllAlbum(){
         return "albumsForm.html";
 
@@ -61,6 +59,6 @@ public class FirstRout {
     public RedirectView addSong(@RequestParam(value = "title") String title , @RequestParam(value = "artist") String artist ,@RequestParam(value = "length") double length,@RequestParam(value = "songCount") int songCount,@RequestParam(value = "imageUrl") String imageUrl){
         Album album=new Album(title,artist,imageUrl,length,songCount);
         albumReposity.save(album);
-        return new RedirectView("/getSong");
+        return new RedirectView("/albums");
     }
 }

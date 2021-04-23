@@ -24,4 +24,8 @@ flex-direction:column;
         height: 30px;
         box-shadow: 0px 10px 0 5px;
     } */
-    
+    a{
+    color:white;
+    background-color:black;
+    border: 2px solid beige;
+    }
