@@ -10,9 +10,28 @@
 </head>
 <body>
 <div class="container">
-<h1>hello there</h1>
+    <h1>hello ,welcome in our Sond App </h1>
+
+    <a href="/AlbumsForm"> add Album !</a>
+    <br>
+    <a href="/album"> Show all Album </a>
+    <br>
+
+    <a href="/AddSongS"> add Song !</a>
+    <br>
+    <a href="/Song"> Show all Song </a>
+    <br>
+
+    <br>
 </div>
 
-
+<h2 class="headers" th:text="'Hello, ' + ${name} + '!'"  ></h2>
+<form class="form" action="/hello" th:action="@{/hello}"  method="get">
+    <h3>write your  Name</h3>
+    <input type="text" th:name="name">
+    <p>
+        <input type="submit" value="Submit" class="button"/>
+    </p>
+</form>
 </body>
 </html>
