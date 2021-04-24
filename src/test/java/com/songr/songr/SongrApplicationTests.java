@@ -38,4 +38,23 @@ class SongrApplicationTests {
 		}
 	}
 
+
+	@Test
+	public void homePage()  {
+		try {
+			this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void helloWordd()  {
+		try {
+			this.mockMvc.perform(get("/hello")).andDo(print()).andExpect(status().isOk());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
